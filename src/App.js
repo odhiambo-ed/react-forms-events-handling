@@ -6,13 +6,15 @@ import axios from 'axios';
 
 class App extends React.Component {
 
-  onSearchSubmit(type) {
-    axios.get('https://api.unsplash.com/search/photos', {
+  async onSearchSubmit(type) {
+    const response = await axios.get('https://api.unsplash.com/search/photos', {
       params: { query: type },
       header: {
         Authorization: 'Client-ID zNCIK0Lrm2VATnf_vJCb93wXV7HxL2_LsBEJTAWlj8s'
       }
-    })
+    });
+
+    console.log(response.data.results);
   }
 
   render() {
