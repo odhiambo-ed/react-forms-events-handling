@@ -5,6 +5,7 @@ class Form extends React.Component {
     
     onFormSubmit(e) {
         e.preventDefault();
+        this.props.onSubmit(this.state.type)
     }
 
     render() {

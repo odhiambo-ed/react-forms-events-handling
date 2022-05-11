@@ -5,8 +5,9 @@ import Form from './components/Form';
 import axios from 'axios';
 
 class App extends React.Component {
+  state = {images: []}
 
-  async onSearchSubmit(type) {
+  onSearchSubmit = async (type) => {
     const response = await axios.get('https://api.unsplash.com/search/photos', {
       params: { query: type },
       header: {
@@ -14,7 +15,7 @@ class App extends React.Component {
       }
     });
 
-    console.log(response.data.results);
+    this.setState({images: response.data.results})
   }
 
   render() {
