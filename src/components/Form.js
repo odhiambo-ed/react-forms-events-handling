@@ -1,32 +1,23 @@
 import React from 'react'
 
-class Form extends React.Component {
-    state = { type: '' }
+class SearchBar extends React.Component {
+    state = { term: '' }
     
-    onFormSubmit(e) {
-        e.preventDefault();
-        this.props.onSubmit(this.state.type)
+    onFormSubmit(event) {
+        event.preventDefault();
+        this.props.onSubmit(this.state.term)
     }
 
     render() {
         return (
-            <div className='ui container'>
-                <div className="ui segment">
-                    <div className="ui form" onsSubmit={this.onFormSubmit}>
-                        <div className="field">
-                            <label>Image Search</label>
-                            <input
-                                type="text"
-                                value={this.state.type}
-                                onChange={(e) => this.setValue(e.target.value)}
-                            />
-                            <p>You've typed!!</p>
-                        </div>
-                    </div>
+            <form onSubmit={this.onFormSubmit} className="ui form">
+                <div className="field">
+                    <label>Image Search</label>
+                    <input term="text" value={this.state.term} onChange={e => this.setState({ term: e.target.value })} />
                 </div>
-            </div>
+            </form>
         )
     }
 }
 
-export default Form
+export default SearchBar
