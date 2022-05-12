@@ -1,15 +1,16 @@
 import React from 'react'
 import './App.css';
 import Nav from './components/Nav';
-import Form from './components/Form';
+import SearchBar from './components/Form';
 import unsplash from './api/unsplash';
+import ImageList from './components/ImageList';
 
 class App extends React.Component {
-  state = {images: []}
+  state = { images: [] };
 
-  onSearchSubmit = async (type) => {
+  onSearchSubmit = async term => {
     const response = await unsplash.get('/search/photos', {
-      params: { query: type }
+      params: { query: term }
     });
 
     this.setState({images: response.data.results})
@@ -19,7 +20,12 @@ class App extends React.Component {
     return (
       <div className="ui container-fluid">
         <Nav />
-        <Form onSubmit={this.onSearchSubmit} />
+        <div className="ui container">
+          <div className="ui segment">
+            <SearchBar onSubmit={this.onSearchSubmit} />
+            <ImageList images={this.state.images} />
+          </div>
+        </div>
       </div>
     );
   }
