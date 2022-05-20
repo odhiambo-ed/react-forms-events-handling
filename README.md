@@ -15,10 +15,6 @@ This is a simple React Image Search App that demonstrate handling User input wit
 
 ![Country](Screenshot-search.png)
 
-
-## [Live Demo - Netlify](https://aesthetic-cupcake-19dcf4.netlify.app)
-<!-- ## [Live Demo ]() -->
-
 ## Built With
 
 * ReactJS
