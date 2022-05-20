@@ -9,8 +9,8 @@ function Nav() {
                   <img src={logo} />
               </div>
               <a class="item">Home</a>
-              <a class="item">About Edward</a>
-              <a class="item">Blog</a>
+        <a href='http://edwardodhiambo.com/' class="item">About Edward</a>
+        <a href='http://edwardodhiambo.com/blog' class="item">Blog</a>
           </div>
     </div>
   )

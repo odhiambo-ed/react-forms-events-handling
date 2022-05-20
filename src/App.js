@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
 import Nav from './components/Nav';
-import SearchBar from './components/Form';
+import SearchBar from './components/SearchBar';
 import unsplash from './api/unsplash';
 import ImageList from './components/ImageList';
 
